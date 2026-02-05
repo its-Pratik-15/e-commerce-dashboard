@@ -1,0 +1,302 @@
+[
+  {
+    "productId": "3372741b-c793-43b5-b875-a23e416e10f9",
+    "name": "Bespoke Plastic Bike",
+    "category": "Clothing",
+    "price": 17918.49
+  },
+  {
+    "productId": "c2613b41-8652-4283-b037-cb63fe1e2500",
+    "name": "Ergonomic Ceramic Gloves",
+    "category": "Clothing",
+    "price": 6601.55
+  },
+  {
+    "productId": "d6e9099e-20de-4268-8d35-5e7beb766713",
+    "name": "Ergonomic Plastic Mouse",
+    "category": "Electronics",
+    "price": 11886.79
+  },
+  {
+    "productId": "793bcede-d2b3-4fd9-a2f6-87ed70e52496",
+    "name": "Handcrafted Plastic Salad",
+    "category": "Electronics",
+    "price": 21488.99
+  },
+  {
+    "productId": "236c099f-9f80-41e3-a079-a3c26d7c3c77",
+    "name": "Intelligent Concrete Chips",
+    "category": "Electronics",
+    "price": 15268.69
+  },
+  {
+    "productId": "3c8512f5-cc47-4238-9340-f5e4c1422dbb",
+    "name": "Bespoke Steel Shoes",
+    "category": "Sports",
+    "price": 17891.19
+  },
+  {
+    "productId": "28ea98ce-9465-451a-bddf-efa41ba708f4",
+    "name": "Soft Cotton Salad",
+    "category": "Beauty",
+    "price": 29887.79
+  },
+  {
+    "productId": "c89dd9f4-c0be-44ec-8713-2b94f7578555",
+    "name": "Rustic Concrete Cheese",
+    "category": "Sports",
+    "price": 33908.35
+  },
+  {
+    "productId": "65fe17fb-ab13-4a82-9a53-7cb4c0860b5d",
+    "name": "Practical Aluminum Chips",
+    "category": "Sports",
+    "price": 18706.89
+  },
+  {
+    "productId": "7a9c579e-644a-4b97-a905-d882ea832ff9",
+    "name": "Oriental Ceramic Towels",
+    "category": "Home & Garden",
+    "price": 46298.39
+  },
+  {
+    "productId": "1a6ab1cc-d472-441d-93e9-26b8a28c28fb",
+    "name": "Modern Bamboo Computer",
+    "category": "Clothing",
+    "price": 31670.39
+  },
+  {
+    "productId": "9005b2b0-61f8-47bc-a9b9-3f4dda4fcba3",
+    "name": "Ergonomic Wooden Chicken",
+    "category": "Sports",
+    "price": 26047.09
+  },
+  {
+    "productId": "300c52c4-30db-4db7-94a4-ed01c9612e95",
+    "name": "Oriental Plastic Pizza",
+    "category": "Electronics",
+    "price": 32701.19
+  },
+  {
+    "productId": "2b6faecc-b57d-472b-8e96-d6e206be9613",
+    "name": "Elegant Granite Salad",
+    "category": "Home & Garden",
+    "price": 34476.79
+  },
+  {
+    "productId": "646e8820-ec35-45e5-b3cc-7110c6703374",
+    "name": "Tasty Gold Hat",
+    "category": "Clothing",
+    "price": 17915.29
+  },
+  {
+    "productId": "d5278177-ca3c-4415-9e1d-d86fd0844bde",
+    "name": "Elegant Gold Shoes",
+    "category": "Beauty",
+    "price": 34487.65
+  },
+  {
+    "productId": "491f8b65-f945-487a-ae13-ce33e1a27a69",
+    "name": "Sleek Gold Tuna",
+    "category": "Electronics",
+    "price": 19070.65
+  },
+  {
+    "productId": "1b143dfb-1750-422a-83e2-fedd2a05c6b8",
+    "name": "Frozen Steel Gloves",
+    "category": "Home & Garden",
+    "price": 37878.15
+  },
+  {
+    "productId": "63698853-896b-43da-8b8e-586260baabe8",
+    "name": "Gorgeous Silk Fish",
+    "category": "Clothing",
+    "price": 29265.89
+  },
+  {
+    "productId": "698ad1d5-c1de-42ae-88ad-3249dfff0d2e",
+    "name": "Licensed Granite Keyboard",
+    "category": "Beauty",
+    "price": 19959.05
+  },
+  {
+    "productId": "ceacd253-4e37-4825-86ae-5bba761aaa9a",
+    "name": "Recycled Ceramic Pizza",
+    "category": "Beauty",
+    "price": 28716.81
+  },
+  {
+    "productId": "11f57153-a9ba-4e7f-9a45-19afe42a6a6d",
+    "name": "Refined Concrete Computer",
+    "category": "Electronics",
+    "price": 17735.99
+  },
+  {
+    "productId": "5f507aab-2800-458b-b708-ac9c82e878e0",
+    "name": "Frozen Bamboo Gloves",
+    "category": "Sports",
+    "price": 17884.99
+  },
+  {
+    "productId": "c3f581c7-9c27-4055-88e1-facedf7f62d4",
+    "name": "Rustic Ceramic Chips",
+    "category": "Clothing",
+    "price": 35783.39
+  },
+  {
+    "productId": "a4c72138-0be2-46fd-8de7-023023bea357",
+    "name": "Refined Ceramic Ball",
+    "category": "Sports",
+    "price": 42651.29
+  },
+  {
+    "productId": "473e6d16-dc83-4116-ba9e-e2bd1b4a625c",
+    "name": "Handcrafted Plastic Shoes",
+    "category": "Electronics",
+    "price": 22048.76
+  },
+  {
+    "productId": "16f91804-68f4-47f5-9ee7-d7c73173235c",
+    "name": "Incredible Silk Mouse",
+    "category": "Electronics",
+    "price": 24099.15
+  },
+  {
+    "productId": "fd31a3ee-a765-4660-9ff7-371784b7a240",
+    "name": "Fantastic Bamboo Soap",
+    "category": "Sports",
+    "price": 4491.79
+  },
+  {
+    "productId": "5cf46f64-4512-4b00-b457-2359a039cb29",
+    "name": "Modern Metal Pizza",
+    "category": "Beauty",
+    "price": 36559.85
+  },
+  {
+    "productId": "e821c19e-30a2-448d-97b2-496b14ff3af6",
+    "name": "Frozen Ceramic Fish",
+    "category": "Sports",
+    "price": 5550.59
+  },
+  {
+    "productId": "e797732c-289f-4b95-8ee6-2390ddfc0737",
+    "name": "Fantastic Granite Gloves",
+    "category": "Electronics",
+    "price": 34508.57
+  },
+  {
+    "productId": "8b477c80-67ad-4149-8261-63908aada877",
+    "name": "Recycled Steel Cheese",
+    "category": "Home & Garden",
+    "price": 24854.05
+  },
+  {
+    "productId": "fea3a03d-50dd-4f8e-9276-340e03832681",
+    "name": "Sleek Cotton Pizza",
+    "category": "Home & Garden",
+    "price": 4713.59
+  },
+  {
+    "productId": "1d07faff-7b5c-4a9e-a358-3c2fa9622862",
+    "name": "Intelligent Wooden Ball",
+    "category": "Beauty",
+    "price": 44784.89
+  },
+  {
+    "productId": "8f4866e9-9f67-4fa6-8d97-12efadc7f6da",
+    "name": "Recycled Rubber Shirt",
+    "category": "Electronics",
+    "price": 29935.59
+  },
+  {
+    "productId": "d933f328-727d-4565-bbb3-27b5d78a5f05",
+    "name": "Small Cotton Soap",
+    "category": "Clothing",
+    "price": 37320.09
+  },
+  {
+    "productId": "36ebb322-2728-4d3f-a647-cd4efd525e63",
+    "name": "Intelligent Bamboo Pizza",
+    "category": "Electronics",
+    "price": 32311.89
+  },
+  {
+    "productId": "98576911-1836-4b69-9d29-cde0ea41115e",
+    "name": "Rustic Gold Sausages",
+    "category": "Electronics",
+    "price": 39662.19
+  },
+  {
+    "productId": "7afb0f41-3bac-448a-9429-94d4ab6837d6",
+    "name": "Luxurious Concrete Tuna",
+    "category": "Clothing",
+    "price": 40484.89
+  },
+  {
+    "productId": "100550bc-e538-4f30-b863-d7be84bd4a5c",
+    "name": "Generic Aluminum Bike",
+    "category": "Sports",
+    "price": 27328.49
+  },
+  {
+    "productId": "a7d6a92c-d779-4f74-8ef2-3e5b9d2190e3",
+    "name": "Awesome Ceramic Hat",
+    "category": "Electronics",
+    "price": 14137.3
+  },
+  {
+    "productId": "e07bdd7f-e202-434a-89f8-458ff6ff3c0d",
+    "name": "Oriental Plastic Shirt",
+    "category": "Electronics",
+    "price": 2938.19
+  },
+  {
+    "productId": "c2b29fca-5afc-4261-9e1c-facd282979ba",
+    "name": "Recycled Rubber Towels",
+    "category": "Beauty",
+    "price": 18736.99
+  },
+  {
+    "productId": "d4189ee9-ede0-47dc-80ba-8f0a545c1f25",
+    "name": "Electronic Wooden Shoes",
+    "category": "Home & Garden",
+    "price": 2018.79
+  },
+  {
+    "productId": "a4dfd205-cb54-4ff3-8567-0d3b324debe9",
+    "name": "Electronic Concrete Soap",
+    "category": "Electronics",
+    "price": 2779.69
+  },
+  {
+    "productId": "99f7c41a-7cbe-4e68-917d-91d37c80468f",
+    "name": "Tasty Marble Car",
+    "category": "Beauty",
+    "price": 12796.69
+  },
+  {
+    "productId": "fe70a51c-91c6-47eb-9147-1dfe6d5343da",
+    "name": "Awesome Gold Hat",
+    "category": "Home & Garden",
+    "price": 39841.35
+  },
+  {
+    "productId": "b48a25db-05e1-4f51-bbe5-89d98c45f886",
+    "name": "Generic Cotton Table",
+    "category": "Sports",
+    "price": 31058.79
+  },
+  {
+    "productId": "444ed382-93b7-446c-9318-89b46b3b6a84",
+    "name": "Recycled Wooden Chicken",
+    "category": "Home & Garden",
+    "price": 43832.55
+  },
+  {
+    "productId": "79d7b781-6a06-4305-9adf-91912c67255a",
+    "name": "Licensed Bamboo Fish",
+    "category": "Home & Garden",
+    "price": 13410.99
+  }
+]

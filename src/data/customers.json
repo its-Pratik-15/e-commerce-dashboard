@@ -1,0 +1,702 @@
+[
+  {
+    "customerId": "6ec8fdff-e7f4-453a-816f-eb9974dd7b09",
+    "name": "Surya Asan",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2024-02-24T18:47:08.625Z"
+  },
+  {
+    "customerId": "6cb3987a-2276-4d99-ba88-052f151c6be6",
+    "name": "Mandakini Deshpande Jr.",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2024-09-08T14:16:01.863Z"
+  },
+  {
+    "customerId": "4bf2c7db-991d-442b-9c0a-7d407ab94b10",
+    "name": "Purushottam Gill-Bhadresha V",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2024-12-13T09:58:35.365Z"
+  },
+  {
+    "customerId": "59ba4e7b-f8f3-4e3d-bd59-a6cf6c15f55e",
+    "name": "Mrs. Ganesh Ganaka",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2024-10-07T07:46:04.452Z"
+  },
+  {
+    "customerId": "0e52ceba-62e1-4a01-9b41-06a5db76b38e",
+    "name": "Archan Adiga",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2024-10-04T15:53:52.456Z"
+  },
+  {
+    "customerId": "606b8da8-7b6c-4733-b848-1adbce6d641d",
+    "name": "Mr. Aditeya Deshpande-Devar",
+    "region": "North India",
+    "customerType": "VIP",
+    "signupDate": "2025-04-06T11:49:48.457Z"
+  },
+  {
+    "customerId": "6379b398-ca13-4688-a54f-b52693a74998",
+    "name": "Himani Nair",
+    "region": "West India",
+    "customerType": "Regular",
+    "signupDate": "2024-05-12T07:38:18.056Z"
+  },
+  {
+    "customerId": "24665fef-2d14-492b-8bbb-ce2bdbfbba34",
+    "name": "Amrita Patil V",
+    "region": "Central India",
+    "customerType": "Premium",
+    "signupDate": "2024-08-03T10:07:14.915Z"
+  },
+  {
+    "customerId": "0f9232e7-a353-40c9-af71-f38d44c67236",
+    "name": "Opalina Pilla",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2024-06-20T08:55:59.544Z"
+  },
+  {
+    "customerId": "b9b18fe8-fc9b-459c-b2e6-ab798296a9d9",
+    "name": "Damodara Iyengar",
+    "region": "Central India",
+    "customerType": "Premium",
+    "signupDate": "2025-04-28T07:23:45.736Z"
+  },
+  {
+    "customerId": "90db213f-f4c1-4f14-9251-1d3990b21133",
+    "name": "Kashyap Jain V",
+    "region": "East India",
+    "customerType": "Premium",
+    "signupDate": "2024-10-12T01:57:43.306Z"
+  },
+  {
+    "customerId": "69a04ab2-aeac-4338-8347-97b3df4eb278",
+    "name": "Chandraprabha Abbott",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-03-14T15:42:30.033Z"
+  },
+  {
+    "customerId": "b58c4b5d-dc4e-4ec7-b3cb-642dc502f9d0",
+    "name": "Hari Ahuja",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-11-15T17:29:40.458Z"
+  },
+  {
+    "customerId": "cab39164-9de2-4d6c-b3ff-46dee95fdf66",
+    "name": "Chanda Nehru",
+    "region": "North India",
+    "customerType": "VIP",
+    "signupDate": "2025-01-09T06:40:06.324Z"
+  },
+  {
+    "customerId": "8498b9b2-c334-4158-a7cc-40b7824c52e3",
+    "name": "Mr. Rajan Banerjee",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2024-05-26T15:09:19.334Z"
+  },
+  {
+    "customerId": "06a59618-efe1-4cee-9228-dc86875d401f",
+    "name": "Dinesh Shah",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2025-07-31T13:27:44.378Z"
+  },
+  {
+    "customerId": "aef4302d-cc64-4d48-ac95-03e3f2139cfa",
+    "name": "Kumuda Mahajan",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2025-04-13T09:41:37.268Z"
+  },
+  {
+    "customerId": "c1298346-49ac-49a1-9b39-2675d477b06d",
+    "name": "Nalini Achari",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2024-08-27T02:34:58.156Z"
+  },
+  {
+    "customerId": "6e23fa4e-f80f-4dbe-992c-a1a2e9215c88",
+    "name": "Niranjan Iyengar",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2024-12-07T05:25:37.242Z"
+  },
+  {
+    "customerId": "fd9a5442-a138-4c1a-b112-8c404d2c297e",
+    "name": "Amritambu Mukhopadhyay",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2025-10-21T19:16:11.825Z"
+  },
+  {
+    "customerId": "4238144f-ea1b-4cf0-8a74-bd738f6fc893",
+    "name": "Aanandaswarup Jha",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2025-12-24T01:48:57.914Z"
+  },
+  {
+    "customerId": "c4acd15d-7add-411f-b776-cf8a771d661e",
+    "name": "Gauraang Asan DDS",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2025-04-18T00:00:14.409Z"
+  },
+  {
+    "customerId": "daf9e9be-5bfd-44a7-8b70-569f244b43a6",
+    "name": "Shridevi Shukla",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2024-11-01T22:32:08.141Z"
+  },
+  {
+    "customerId": "433be5df-2cc3-48f5-89a8-5461664a51d1",
+    "name": "Raj Jain",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2025-11-20T13:41:13.831Z"
+  },
+  {
+    "customerId": "96cf0697-d6e1-4d73-a0bd-3279700818c3",
+    "name": "Mrs. Vasanti Kaul",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2024-12-12T14:11:15.679Z"
+  },
+  {
+    "customerId": "f1172051-f60e-48fb-a2a0-5f87d0214a32",
+    "name": "Brijesh Pilla",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2024-12-10T09:20:44.358Z"
+  },
+  {
+    "customerId": "be62968a-4368-4e68-ad6b-2731f71e08b2",
+    "name": "Uma Kakkar",
+    "region": "West India",
+    "customerType": "Regular",
+    "signupDate": "2025-11-16T21:24:43.739Z"
+  },
+  {
+    "customerId": "e967360f-1e85-431f-ae03-696427dce4eb",
+    "name": "Dayaanidhi Bhat",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2025-07-23T19:07:15.066Z"
+  },
+  {
+    "customerId": "b6dcefa4-dfeb-438a-8b5a-72394926eb6d",
+    "name": "Suryakanta Nayar",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2025-05-30T00:39:48.829Z"
+  },
+  {
+    "customerId": "339701bf-7a93-469d-be48-ced0cdaca456",
+    "name": "Miss Kali Tagore",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2024-03-20T20:21:50.470Z"
+  },
+  {
+    "customerId": "c9cf1874-2662-43b3-9f2f-b00cd92e22d7",
+    "name": "Anandamayi Nambeesan",
+    "region": "East India",
+    "customerType": "Regular",
+    "signupDate": "2025-06-03T10:40:11.778Z"
+  },
+  {
+    "customerId": "bc8695a0-0bbe-415b-96f5-4abd59f22292",
+    "name": "Agasti Nair",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2024-06-27T02:04:19.540Z"
+  },
+  {
+    "customerId": "65c7f735-502c-4d04-be56-9ee7a6aae4a6",
+    "name": "Rohana Suthar",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2024-08-18T23:06:10.372Z"
+  },
+  {
+    "customerId": "4e07aa94-20f2-4b37-bf75-9446d4dcc7e2",
+    "name": "Swarnalata Shah",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-02-27T10:06:57.513Z"
+  },
+  {
+    "customerId": "9559cdce-6681-40b6-bf91-234bd6cb82ce",
+    "name": "Tanushri Pillai",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2024-10-09T08:54:54.180Z"
+  },
+  {
+    "customerId": "34f1e77e-e44b-4145-9641-0fa800df911e",
+    "name": "Mandaakin Desai V",
+    "region": "West India",
+    "customerType": "Regular",
+    "signupDate": "2025-10-04T12:26:56.429Z"
+  },
+  {
+    "customerId": "b30c2b43-f5dd-4809-bc88-4273d008f8a8",
+    "name": "Chandini Shukla",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2025-01-19T14:28:43.202Z"
+  },
+  {
+    "customerId": "a366b5ee-450f-4efc-9558-2d3f4adf839f",
+    "name": "Miss Radha Mehra",
+    "region": "North India",
+    "customerType": "VIP",
+    "signupDate": "2025-08-18T04:05:59.495Z"
+  },
+  {
+    "customerId": "db38ea17-b73a-45fb-a327-37d223bfd1d4",
+    "name": "Kalinda Mahajan",
+    "region": "South India",
+    "customerType": "Premium",
+    "signupDate": "2025-08-07T05:59:14.276Z"
+  },
+  {
+    "customerId": "72eeece4-55c3-4445-8de4-a85ecfaf4f3c",
+    "name": "Manik Bhattacharya",
+    "region": "West India",
+    "customerType": "Regular",
+    "signupDate": "2026-02-03T20:45:29.107Z"
+  },
+  {
+    "customerId": "5841c99a-c9cf-4922-a7f6-bf7cf55d451b",
+    "name": "Mr. Dipankar Shukla",
+    "region": "South India",
+    "customerType": "Premium",
+    "signupDate": "2025-07-17T05:00:21.681Z"
+  },
+  {
+    "customerId": "79fc76a5-f4ef-42ac-8042-3d29a4f586a1",
+    "name": "Mr. Anand Swarup Verma",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2025-01-17T17:07:08.768Z"
+  },
+  {
+    "customerId": "f59ef8cc-0c02-442c-bc7d-8ad26e8ed6f2",
+    "name": "Miss Shrishti Talwar",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-08-29T04:38:11.089Z"
+  },
+  {
+    "customerId": "b7161a2b-21ae-465e-8658-1b8397b40e08",
+    "name": "Shivakari Sharma",
+    "region": "Central India",
+    "customerType": "Regular",
+    "signupDate": "2024-10-11T15:20:50.774Z"
+  },
+  {
+    "customerId": "74463bac-97a5-47cf-84a0-1d7c80a8d8b9",
+    "name": "Rudra Kaur",
+    "region": "South India",
+    "customerType": "Premium",
+    "signupDate": "2025-08-11T08:50:11.009Z"
+  },
+  {
+    "customerId": "80f4d612-5100-43e1-89fe-61554f5aee71",
+    "name": "Darshan Joshi",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2025-11-14T15:16:41.760Z"
+  },
+  {
+    "customerId": "a44511e8-1def-4eb2-80f8-79e5cf9e1325",
+    "name": "Chandrani Khatri",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-11-05T14:47:59.037Z"
+  },
+  {
+    "customerId": "66a2ad28-1a97-4fdc-b66f-663062ab7bff",
+    "name": "Budhil Bharadwaj",
+    "region": "East India",
+    "customerType": "Regular",
+    "signupDate": "2026-01-30T22:12:06.544Z"
+  },
+  {
+    "customerId": "9089bad4-f305-4171-89a8-e458eeb69e39",
+    "name": "Damayanti Nehru",
+    "region": "Central India",
+    "customerType": "Regular",
+    "signupDate": "2024-03-02T08:32:13.447Z"
+  },
+  {
+    "customerId": "293eb7fa-288c-45ef-b0de-380930eac53e",
+    "name": "Manisha Bhadresha",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2024-12-29T08:26:30.939Z"
+  },
+  {
+    "customerId": "670d273d-0543-4937-85d6-4f9420a9620a",
+    "name": "Swapnil Pothuvaal",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-06-02T11:17:35.836Z"
+  },
+  {
+    "customerId": "79d9ec46-8ba4-46f6-a213-dd290a512571",
+    "name": "Sweta Banerjee",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2025-08-23T00:19:20.540Z"
+  },
+  {
+    "customerId": "3aca143a-01a8-4581-8c46-668210dd428a",
+    "name": "Miss Atreyi Varrier",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2024-10-21T16:03:03.959Z"
+  },
+  {
+    "customerId": "81c142e2-fe1a-4ff9-b71f-089871afdc34",
+    "name": "Archan Mishra DDS",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2025-03-06T19:05:53.806Z"
+  },
+  {
+    "customerId": "bcb25765-cf76-4e12-87a1-a993937723ab",
+    "name": "Malati Pillai",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2025-07-12T15:54:12.452Z"
+  },
+  {
+    "customerId": "90802286-5830-4b95-8855-0401bacc8505",
+    "name": "Mandakini Bhadresha",
+    "region": "West India",
+    "customerType": "Regular",
+    "signupDate": "2024-05-15T21:12:42.676Z"
+  },
+  {
+    "customerId": "12b21687-1c9b-467f-a665-af004a64e8c0",
+    "name": "Kalyani Sethi",
+    "region": "East India",
+    "customerType": "Regular",
+    "signupDate": "2025-05-15T05:33:45.918Z"
+  },
+  {
+    "customerId": "f1e1e33b-eb74-4b2d-9f32-a198b22791a3",
+    "name": "Naval Johar",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2024-10-18T14:34:19.844Z"
+  },
+  {
+    "customerId": "54772516-3ffc-4660-809e-3e041867b84d",
+    "name": "Brahmanandam Guneta",
+    "region": "East India",
+    "customerType": "Premium",
+    "signupDate": "2024-07-09T19:10:52.775Z"
+  },
+  {
+    "customerId": "4cf5cd5f-341c-4607-927b-40e0ba8f6ee0",
+    "name": "Chakravarti Varman",
+    "region": "North India",
+    "customerType": "VIP",
+    "signupDate": "2025-06-24T19:43:00.747Z"
+  },
+  {
+    "customerId": "cf4fd27c-0c83-4bed-85a0-e1bc1ab52fdc",
+    "name": "Pranay Kaul",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2024-04-19T03:31:23.590Z"
+  },
+  {
+    "customerId": "b3b54411-77bc-4c62-a968-66569ee99924",
+    "name": "Chatura Nambeesan",
+    "region": "Central India",
+    "customerType": "Regular",
+    "signupDate": "2025-07-04T15:24:00.647Z"
+  },
+  {
+    "customerId": "d766eb63-4d79-4f12-9cfa-7f01ad0e7211",
+    "name": "Arya Shah I",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2025-02-04T00:05:55.583Z"
+  },
+  {
+    "customerId": "18f7ef12-05f3-4968-88f2-a710b2471a0c",
+    "name": "Deevakar Chattopadhyay",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2025-09-06T09:13:36.056Z"
+  },
+  {
+    "customerId": "c4d78b0f-1e7b-447a-9f84-c5c65ba416f9",
+    "name": "Baidehi Jain-Banerjee",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2024-09-01T21:48:08.282Z"
+  },
+  {
+    "customerId": "6d69ec2b-643c-458e-887a-effe97870ba2",
+    "name": "Som Jain",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2025-12-03T02:34:36.505Z"
+  },
+  {
+    "customerId": "264538ad-f052-46de-8175-abe4cfb8b428",
+    "name": "Gatik Mahajan",
+    "region": "Central India",
+    "customerType": "Premium",
+    "signupDate": "2025-07-20T18:29:33.997Z"
+  },
+  {
+    "customerId": "4f3950a3-44ba-4392-b276-19747f02d7ff",
+    "name": "Narinder Gowda DVM",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2025-12-19T08:31:36.120Z"
+  },
+  {
+    "customerId": "2c1b5993-e261-46ef-8571-25f49a710265",
+    "name": "Anandamayi Jain",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2024-12-30T16:55:39.324Z"
+  },
+  {
+    "customerId": "d5bfb5a2-4dba-4874-81fa-d6e1e2147eac",
+    "name": "Gandharv Mehrotra",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2025-05-13T14:55:13.937Z"
+  },
+  {
+    "customerId": "0ee4c447-618a-47a0-a84f-d37bc0462404",
+    "name": "Sanka Saini",
+    "region": "North India",
+    "customerType": "VIP",
+    "signupDate": "2024-04-15T07:45:56.900Z"
+  },
+  {
+    "customerId": "32877471-91c9-4098-a843-ea32e551f859",
+    "name": "Miss Chandramani Guha",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2024-05-09T11:51:15.870Z"
+  },
+  {
+    "customerId": "cfaf74d3-df63-41e8-9376-55b6b6d2cbcd",
+    "name": "Dakshayani Asan",
+    "region": "West India",
+    "customerType": "Regular",
+    "signupDate": "2024-06-17T23:33:12.476Z"
+  },
+  {
+    "customerId": "f4deafe4-22f6-40af-b943-8263942bd368",
+    "name": "Gauraang Tagore",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2024-02-27T19:28:37.904Z"
+  },
+  {
+    "customerId": "a0dff592-cf96-45ef-be1f-3486261d782c",
+    "name": "Heema Nayar",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2024-10-07T13:55:15.726Z"
+  },
+  {
+    "customerId": "bee85e57-0405-4f01-a07a-e4f55f2a46b7",
+    "name": "Chidambaram Somayaji",
+    "region": "East India",
+    "customerType": "Regular",
+    "signupDate": "2024-12-22T14:33:22.907Z"
+  },
+  {
+    "customerId": "8c00ff79-b8b5-47e0-85a6-65dee17f3bdc",
+    "name": "Dr. Aaryan Guneta III",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2024-08-15T08:21:56.262Z"
+  },
+  {
+    "customerId": "dd771ecb-58af-4c4c-bead-3f95d25f3400",
+    "name": "Balamani Gill",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2025-01-04T03:42:46.900Z"
+  },
+  {
+    "customerId": "fb108a62-6f47-473d-9d36-c152e2cef01d",
+    "name": "Gurdev Trivedi",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2025-01-21T02:16:06.756Z"
+  },
+  {
+    "customerId": "12b781a4-b26b-445c-977c-ebe3ab8afedd",
+    "name": "Ahilya Chopra",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2025-09-10T04:53:07.302Z"
+  },
+  {
+    "customerId": "139d0f4d-46d1-4527-9622-1e572d27f8a6",
+    "name": "Sachin Mehrotra",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2025-12-19T11:12:16.310Z"
+  },
+  {
+    "customerId": "9838df3b-c523-473c-aeff-a3e7e0f3de63",
+    "name": "Sushma Acharya",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2025-04-01T11:05:53.151Z"
+  },
+  {
+    "customerId": "01a66ddf-b980-48e1-bec7-574acb75de78",
+    "name": "Bhooshan Ahuja",
+    "region": "South India",
+    "customerType": "Premium",
+    "signupDate": "2024-07-18T18:53:46.271Z"
+  },
+  {
+    "customerId": "dd436f37-bdaf-4e69-b676-31a7c24d8572",
+    "name": "Akshaj Varman",
+    "region": "South India",
+    "customerType": "Regular",
+    "signupDate": "2024-08-15T15:17:32.483Z"
+  },
+  {
+    "customerId": "8343bb08-6f7c-4d58-b0f1-d12700bb82e1",
+    "name": "Akshayakeerti Somayaji",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2025-10-11T12:12:07.418Z"
+  },
+  {
+    "customerId": "97ded386-f492-4eb5-baa5-4bc118845e1c",
+    "name": "Suryakantam Pillai",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2025-01-17T22:45:30.627Z"
+  },
+  {
+    "customerId": "c97c4733-b58d-4dd8-a57e-1e5e4362dc14",
+    "name": "Mr. Dharitri Chopra",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2024-12-02T02:14:32.872Z"
+  },
+  {
+    "customerId": "f2569b81-e111-43bf-8cdd-18d8233db70f",
+    "name": "Tara Sinha",
+    "region": "West India",
+    "customerType": "Premium",
+    "signupDate": "2024-12-18T09:29:15.073Z"
+  },
+  {
+    "customerId": "200feeb2-8767-4048-a7b6-be071cf8e702",
+    "name": "Dr. Advaya Gupta DVM",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2025-06-30T11:39:08.294Z"
+  },
+  {
+    "customerId": "cf587456-fa12-43b1-a36b-78a12971265c",
+    "name": "Ghanshyam Achari",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2025-05-09T07:17:24.402Z"
+  },
+  {
+    "customerId": "f4f17640-2131-4be1-a0af-a5274002cda2",
+    "name": "Amish Pillai",
+    "region": "Central India",
+    "customerType": "VIP",
+    "signupDate": "2025-11-07T02:29:32.733Z"
+  },
+  {
+    "customerId": "b6e0be7b-87eb-4913-a229-e4005ae9869d",
+    "name": "Dr. Himadri Varma",
+    "region": "Central India",
+    "customerType": "Regular",
+    "signupDate": "2025-05-30T20:28:08.159Z"
+  },
+  {
+    "customerId": "e32b30c4-614c-4fe7-9139-ef5e58cfebd8",
+    "name": "Ms. Rajiv Gowda",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2025-11-17T11:01:22.414Z"
+  },
+  {
+    "customerId": "bb355375-4f04-44ee-8b8d-a1506ddeed49",
+    "name": "Mrs. Gautami Devar",
+    "region": "South India",
+    "customerType": "VIP",
+    "signupDate": "2025-01-09T11:17:27.237Z"
+  },
+  {
+    "customerId": "4b2147a4-885d-43a9-ae91-39e7b154af2c",
+    "name": "Vasundhara Gowda",
+    "region": "North India",
+    "customerType": "Premium",
+    "signupDate": "2024-12-29T21:30:40.362Z"
+  },
+  {
+    "customerId": "4e51a6a5-147c-4227-a3c6-1cd52f73b91d",
+    "name": "Nalini Khatri",
+    "region": "East India",
+    "customerType": "VIP",
+    "signupDate": "2025-02-13T15:52:13.664Z"
+  },
+  {
+    "customerId": "62e6e5c4-0c78-45c2-b734-5efacd610f28",
+    "name": "Archan Deshpande",
+    "region": "East India",
+    "customerType": "Premium",
+    "signupDate": "2025-05-20T14:19:27.416Z"
+  },
+  {
+    "customerId": "a578c2cc-d5eb-42a0-9681-93c6654a0096",
+    "name": "Gayatri Tandon",
+    "region": "Central India",
+    "customerType": "Premium",
+    "signupDate": "2024-09-29T19:30:07.974Z"
+  },
+  {
+    "customerId": "aca358ea-a398-4e1e-9303-87e9828f8ec7",
+    "name": "Nimit Varrier",
+    "region": "West India",
+    "customerType": "VIP",
+    "signupDate": "2025-03-15T01:35:15.550Z"
+  },
+  {
+    "customerId": "b99c52fc-bc1a-4e81-a779-1a06ee7871e8",
+    "name": "Dwaipayan Kaur",
+    "region": "North India",
+    "customerType": "Regular",
+    "signupDate": "2024-03-12T11:29:31.722Z"
+  }
+]
