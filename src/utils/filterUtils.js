@@ -13,6 +13,7 @@ export const filterData = (data, filters, dateRangeValue, dateField = 'orderDate
             if (!itemDate.isBetween(dateRangeValue.start, dateRangeValue.end, null, '[]')) {
                 return false;
             }
+            // console.log(itemDate, dateRangeValue.start, dateRangeValue.end);
         }
 
         // Category Filtering

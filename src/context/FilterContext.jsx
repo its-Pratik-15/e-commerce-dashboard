@@ -40,6 +40,47 @@ export const FilterProvider = ({ children }) => {
         }
     }, [filters.dateRange]);
 
+    const previousDateRangeValue = useMemo(() => {
+        const now = dayjs();
+        switch (filters.dateRange) {
+            case DATE_RANGES.LAST_7_DAYS:
+                // Compare with the 7 days BEFORE the last 7 days (day -14 to day -7)
+                return { start: now.subtract(14, 'day'), end: now.subtract(7, 'day') };
+            case DATE_RANGES.LAST_30_DAYS:
+                return { start: now.subtract(60, 'day'), end: now.subtract(30, 'day') };
+            case DATE_RANGES.THIS_MONTH:
+                // Previous month
+                return { start: now.subtract(1, 'month').startOf('month'), end: now.subtract(1, 'month').endOf('month') };
+            case DATE_RANGES.LAST_MONTH:
+                // Month before last month
+                return { start: now.subtract(2, 'month').startOf('month'), end: now.subtract(2, 'month').endOf('month') };
+            case DATE_RANGES.THIS_YEAR:
+                // Last year
+                return { start: now.subtract(1, 'year').startOf('year'), end: now.subtract(1, 'year').endOf('year') };
+            case DATE_RANGES.ALL_TIME:
+            default:
+                return null;
+        }
+    }, [filters.dateRange]);
+
+    const comparisonLabel = useMemo(() => {
+        switch (filters.dateRange) {
+            case DATE_RANGES.LAST_7_DAYS:
+                return "vs prev 7 days";
+            case DATE_RANGES.LAST_30_DAYS:
+                return "vs prev 30 days";
+            case DATE_RANGES.THIS_MONTH:
+                return "vs last month";
+            case DATE_RANGES.LAST_MONTH:
+                return "vs 2 months ago";
+            case DATE_RANGES.THIS_YEAR:
+                return "vs last year";
+            case DATE_RANGES.ALL_TIME:
+            default:
+                return "vs previous period";
+        }
+    }, [filters.dateRange]);
+
     const updateFilter = (key, value) => {
         setFilters(prev => ({ ...prev, [key]: value }));
     };
@@ -54,7 +95,7 @@ export const FilterProvider = ({ children }) => {
     };
 
     return (
-        <FilterContext.Provider value={{ filters, updateFilter, resetFilters, dateRangeValue }}>
+        <FilterContext.Provider value={{ filters, updateFilter, resetFilters, dateRangeValue, previousDateRangeValue, comparisonLabel }}>
             {children}
         </FilterContext.Provider>
     );
