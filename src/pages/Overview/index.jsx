@@ -1,10 +1,13 @@
 import React from 'react';
+import FilterBar from '../../filters/FilterBar';
 
 const Overview = () => {
     return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Overview Dashboard</h1>
-            <p className="text-gray-400">Welcome to the Analytics Overview.</p>
+        <div className="space-y-6">
+            <h1 className="text-2xl font-bold text-gray-900">Overview Dashboard</h1>
+            <FilterBar />
+
+            {/* KPI Cards will go here */}
         </div>
     );
 };
