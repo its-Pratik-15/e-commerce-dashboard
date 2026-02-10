@@ -30,6 +30,20 @@ export const filterData = (data, filters, dateRangeValue, dateField = 'orderDate
             }
         }
 
+        // Status Filtering (for Orders)
+        if (filters.status && filters.status !== 'All' && item.orderStatus) {
+            if (item.orderStatus !== filters.status) {
+                return false;
+            }
+        }
+
+        // Customer Type Filtering (for Customers)
+        if (filters.customerType && filters.customerType !== 'All' && item.customerType) {
+            if (item.customerType !== filters.customerType) {
+                return false;
+            }
+        }
+
         return true;
     });
 };

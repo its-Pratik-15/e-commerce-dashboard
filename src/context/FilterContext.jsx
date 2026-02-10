@@ -17,6 +17,8 @@ export const FilterProvider = ({ children }) => {
         dateRange: DATE_RANGES.ALL_TIME,
         category: 'All',
         region: 'All',
+        status: 'All',
+        customerType: 'All',
         searchQuery: '' // Adding search query as well for global search if needed
     });
 
@@ -90,6 +92,8 @@ export const FilterProvider = ({ children }) => {
             dateRange: DATE_RANGES.ALL_TIME,
             category: 'All',
             region: 'All',
+            status: 'All',
+            customerType: 'All',
             searchQuery: ''
         });
     };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { FilterX, Calendar, MapPin, Tag } from 'lucide-react';
+import { FilterX, Calendar, MapPin, Tag, Activity, Users } from 'lucide-react';
 import { useFilters } from '../context/FilterContext';
-import { DATE_RANGE_OPTIONS, CATEGORIES, REGIONS } from '../constants';
+import { DATE_RANGE_OPTIONS, CATEGORIES, REGIONS, ORDER_STATUSES, CUSTOMER_TYPES } from '../constants';
 
 const FilterSelect = ({ icon: Icon, value, onChange, options, label, placeholder = 'Select...', showDefaultOption = true }) => (
     <div className="relative w-full">
@@ -34,43 +34,83 @@ const FilterSelect = ({ icon: Icon, value, onChange, options, label, placeholder
     </div>
 );
 
-const FilterBar = () => {
+const FilterBar = ({
+    showDate = true,
+    showCategory = true,
+    showRegion = true,
+    showStatus = false,
+    showCustomerType = false
+}) => {
     const { filters, updateFilter, resetFilters } = useFilters();
 
     return (
         <div className="mb-6 flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-1 flex-col gap-4 sm:flex-row sm:items-center">
-                <div className="w-full sm:w-48">
-                    <FilterSelect
-                        icon={Calendar}
-                        value={filters.dateRange}
-                        onChange={(val) => updateFilter('dateRange', val)}
-                        options={DATE_RANGE_OPTIONS}
-                        showDefaultOption={false} // Date range options already include "All Time"
-                    />
-                </div>
+            <div className="flex flex-1 flex-col gap-4 sm:flex-row sm:items-center flex-wrap">
+                {showDate && (
+                    <div className="w-full sm:w-48">
+                        <FilterSelect
+                            icon={Calendar}
+                            value={filters.dateRange}
+                            onChange={(val) => updateFilter('dateRange', val)}
+                            options={DATE_RANGE_OPTIONS}
+                            showDefaultOption={false} // Date range options already include "All Time"
+                        />
+                    </div>
+                )}
 
-                <div className="w-full sm:w-48">
-                    <FilterSelect
-                        icon={Tag}
-                        value={filters.category}
-                        onChange={(val) => updateFilter('category', val)}
-                        options={CATEGORIES}
-                        label="Category"
-                        showDefaultOption={true}
-                    />
-                </div>
+                {showCategory && (
+                    <div className="w-full sm:w-48">
+                        <FilterSelect
+                            icon={Tag}
+                            value={filters.category}
+                            onChange={(val) => updateFilter('category', val)}
+                            options={CATEGORIES}
+                            label="Category"
+                            showDefaultOption={true}
+                        />
+                    </div>
+                )}
 
-                <div className="w-full sm:w-48">
-                    <FilterSelect
-                        icon={MapPin}
-                        value={filters.region}
-                        onChange={(val) => updateFilter('region', val)}
-                        options={REGIONS}
-                        label="Region"
-                        showDefaultOption={true}
-                    />
-                </div>
+                {showRegion && (
+                    <div className="w-full sm:w-48">
+                        <FilterSelect
+                            icon={MapPin}
+                            value={filters.region}
+                            onChange={(val) => updateFilter('region', val)}
+                            options={REGIONS}
+                            label="Region"
+                            showDefaultOption={true}
+                        />
+                    </div>
+                )}
+
+                {showStatus && (
+                    <div className="w-full sm:w-48">
+                        <FilterSelect
+                            icon={Activity}
+                            value={filters.status}
+                            onChange={(val) => updateFilter('status', val)}
+                            options={ORDER_STATUSES}
+                            label="Status"
+                            showDefaultOption={true}
+                            placeholder="All Statuses"
+                        />
+                    </div>
+                )}
+
+                {showCustomerType && (
+                    <div className="w-full sm:w-48">
+                        <FilterSelect
+                            icon={Users}
+                            value={filters.customerType}
+                            onChange={(val) => updateFilter('customerType', val)}
+                            options={CUSTOMER_TYPES}
+                            label="Customer Type"
+                            showDefaultOption={true}
+                            placeholder="All Types"
+                        />
+                    </div>
+                )}
             </div>
 
             <div className="flex justify-end">

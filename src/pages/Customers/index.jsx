@@ -109,7 +109,7 @@ const CustomersPage = () => {
                 </div>
             </div>
 
-            <FilterBar />
+            <FilterBar showCategory={false} showCustomerType={true} />
 
             <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="h-[600px] w-full">

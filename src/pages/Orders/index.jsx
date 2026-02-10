@@ -98,7 +98,7 @@ const OrdersPage = () => {
                 <h1 className="text-2xl font-bold text-gray-900">Orders</h1>
             </div>
 
-            <FilterBar />
+            <FilterBar showCategory={false} showStatus={true} />
 
             <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 {/* Custom wrapper for VirtualizedTable to fit remaining height */}
