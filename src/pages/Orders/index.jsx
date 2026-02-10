@@ -22,7 +22,13 @@ const OrdersPage = () => {
 
     // Filter and Sort Data
     const processedOrders = useMemo(() => {
-        let filtered = filterOrders(ordersData, filters, dateRangeValue);
+        // First enrich orders with customer name for search filtering
+        const enrichedOrders = ordersData.map(order => ({
+            ...order,
+            customerName: customerLookup[order.customerId] || ''
+        }));
+
+        let filtered = filterOrders(enrichedOrders, filters, dateRangeValue);
 
         if (sortConfig.key) {
             filtered.sort((a, b) => {
@@ -36,7 +42,7 @@ const OrdersPage = () => {
             });
         }
         return filtered;
-    }, [filters, dateRangeValue, sortConfig]);
+    }, [filters, dateRangeValue, sortConfig, customerLookup]);
 
     const handleSort = (key) => {
         let direction = 'asc';
@@ -98,7 +104,7 @@ const OrdersPage = () => {
                 <h1 className="text-2xl font-bold text-gray-900">Orders</h1>
             </div>
 
-            <FilterBar showCategory={false} showStatus={true} />
+            <FilterBar showCategory={false} showStatus={true} showSearch={true}/>
 
             <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 {/* Custom wrapper for VirtualizedTable to fit remaining height */}
