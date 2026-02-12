@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
     const menuItems = [
-        { icon: LayoutDashboard, label: 'Overview', path: '/overview' },
+        { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
         { icon: BarChart3, label: 'Analytics', path: '/analytics' },
         { icon: ShoppingCart, label: 'Orders', path: '/orders' },
         { icon: Users, label: 'Customers', path: '/customers' },

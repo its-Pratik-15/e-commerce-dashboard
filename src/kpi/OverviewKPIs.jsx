@@ -1,41 +1,37 @@
 import React, { useMemo } from 'react';
-import { IndianRupee, ShoppingBag, Users, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
 
-const KPICard = ({ title, value, icon: Icon, change, changeType, loading, label }) => (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-        <div className="flex items-center justify-between">
-            <div>
-                <p className="text-sm font-medium text-gray-500">{title}</p>
-                <h3 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+const KPICard = ({ title, value, change, changeType, loading, label }) => {
+    const isPositive = changeType === 'positive';
+    const isNegative = changeType === 'negative';
+
+    return (
+        <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+            <p className="text-sm font-medium text-gray-500">{title}</p>
+            <div className="mt-2 flex items-end justify-between">
+                <h3 className="text-2xl font-bold text-gray-900">
                     {loading ? (
-                        <div className="h-9 w-32 animate-pulse rounded bg-gray-200"></div>
+                        <div className="h-8 w-24 animate-pulse rounded bg-gray-200"></div>
                     ) : (
                         value
                     )}
                 </h3>
+                {!loading && Math.abs(change) > 0 && (
+                    <div className={`flex items-center text-sm font-medium ${isPositive ? 'text-emerald-500' :
+                            isNegative ? 'text-red-500' :
+                                'text-gray-500'
+                        }`}>
+                        {isPositive && <ArrowUpRight className="mr-1 h-5 w-5" />}
+                        {isNegative && <ArrowDownRight className="mr-1 h-5 w-5" />}
+                        {!isPositive && !isNegative && <Minus className="mr-1 h-5 w-5" />}
+                        {Math.abs(change)}%
+                    </div>
+                )}
             </div>
-            <div className={`rounded-full p-3 ${title === 'Total Revenue' ? 'bg-indigo-50 text-indigo-600' :
-                title === 'Total Orders' ? 'bg-blue-50 text-blue-600' :
-                    title === 'Active Customers' ? 'bg-orange-50 text-orange-600' :
-                        'bg-emerald-50 text-emerald-600'
-                }`}>
-                <Icon className="h-6 w-6" />
-            </div>
+            {!loading && Math.abs(change) > 0 && <p className="mt-1 text-xs text-gray-400">{label}</p>}
         </div>
-        <div className="mt-4 flex items-center text-sm">
-            {loading ? (
-                <div className="h-4 w-24 animate-pulse rounded bg-gray-200"></div>
-            ) : (
-                <>
-                    <span className={changeType === 'positive' ? 'text-emerald-600 font-medium' : changeType === 'negative' ? 'text-red-600 font-medium' : 'text-gray-500 font-medium'}>
-                        {changeType === 'positive' ? '+' : ''}{change}%
-                    </span>
-                    <span className="ml-2 text-gray-400">{label}</span>
-                </>
-            )}
-        </div>
-    </div>
-);
+    );
+};
 
 const OverviewKPIs = ({ orders = [], previousOrders = [], comparisonLabel = 'vs previous period', loading = false }) => {
     // Helper to calculate metrics
@@ -109,7 +105,6 @@ const OverviewKPIs = ({ orders = [], previousOrders = [], comparisonLabel = 'vs 
             <KPICard
                 title="Total Revenue"
                 value={formatCurrency(kpiData.current.revenue)}
-                icon={IndianRupee}
                 change={kpiData.changes.revenue}
                 changeType={getChangeType(kpiData.changes.revenue)}
                 loading={loading}
@@ -118,7 +113,6 @@ const OverviewKPIs = ({ orders = [], previousOrders = [], comparisonLabel = 'vs 
             <KPICard
                 title="Total Orders"
                 value={kpiData.current.orders.toLocaleString()}
-                icon={ShoppingBag}
                 change={kpiData.changes.orders}
                 changeType={getChangeType(kpiData.changes.orders)}
                 loading={loading}
@@ -127,7 +121,6 @@ const OverviewKPIs = ({ orders = [], previousOrders = [], comparisonLabel = 'vs 
             <KPICard
                 title="Avg. Order Value"
                 value={formatCurrency(kpiData.current.aov)}
-                icon={TrendingUp}
                 change={kpiData.changes.aov}
                 changeType={getChangeType(kpiData.changes.aov)}
                 loading={loading}
@@ -136,7 +129,6 @@ const OverviewKPIs = ({ orders = [], previousOrders = [], comparisonLabel = 'vs 
             <KPICard
                 title="Active Customers"
                 value={kpiData.current.activeCustomers.toLocaleString()}
-                icon={Users}
                 change={kpiData.changes.activeCustomers}
                 changeType={getChangeType(kpiData.changes.activeCustomers)}
                 loading={loading}
