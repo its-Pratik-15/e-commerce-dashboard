@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BarChart3, Settings, LogOut, ShoppingCart, Users, Package } from 'lucide-react';
+import { LayoutDashboard, BarChart3, Settings, LogOut, ShoppingCart, Users, Package, ChevronLeft, ChevronRight } from 'lucide-react';
 import clsx from 'clsx';
 
-const Sidebar = ({ isCollapsed }) => {
+const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
     const menuItems = [
         { icon: LayoutDashboard, label: 'Overview', path: '/overview' },
         { icon: BarChart3, label: 'Analytics', path: '/analytics' },
@@ -24,9 +24,16 @@ const Sidebar = ({ isCollapsed }) => {
                 isCollapsed ? "w-20" : "w-64"
             )}
         >
-            <div className={clsx("flex h-16 items-center border-b border-gray-200 px-6", isCollapsed ? "justify-center" : "")}>
-                <span className={clsx("text-xl font-bold text-indigo-600", isCollapsed && "hidden")}>DashBoard</span>
-                {isCollapsed && <span className="text-xl font-bold text-indigo-600">DB</span>}
+            <div className={clsx("flex h-16 items-center border-b border-gray-200 px-4 transition-all", isCollapsed ? "justify-center" : "justify-between")}>
+                {!isCollapsed && <span className="text-xl font-bold text-indigo-600">Dashboard</span>}
+                <button
+                    onClick={() => setIsCollapsed(!isCollapsed)}
+                    className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hidden lg:block"
+                >
+                    {isCollapsed ? <ChevronRight className="h-5 w-5" /> : <ChevronLeft className="h-5 w-5" />}
+                </button>
+                {/* Mobile placeholder or logo if needed */}
+                {isCollapsed && <span className="text-xl font-bold text-indigo-600 lg:hidden">DB</span>}
             </div>
 
             <div className="flex flex-col h-[calc(100vh-4rem)] justify-between px-3 py-4">
@@ -88,6 +95,18 @@ const Sidebar = ({ isCollapsed }) => {
                             </li>
                         ))}
                     </ul>
+
+                    <div className={clsx("mt-6 border-t border-gray-100 pt-4 flex items-center", isCollapsed ? "justify-center" : "gap-3")}>
+                        <div className="h-9 w-9 rounded-full bg-indigo-100 flex flex-shrink-0 items-center justify-center text-indigo-600 font-bold text-sm">
+                            JS
+                        </div>
+                        {!isCollapsed && (
+                            <div className="flex flex-col overflow-hidden">
+                                <span className="text-sm font-medium text-gray-900 truncate">John Smith</span>
+                                <span className="text-xs text-gray-500 truncate">admin@store.com</span>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </aside>

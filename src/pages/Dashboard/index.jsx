@@ -6,21 +6,25 @@ import CategorySalesChart from '../../charts/CategorySalesChart';
 import { useFilters } from '../../context/FilterContext';
 import { filterOrders } from '../../utils/filterUtils';
 import ordersData from '../../data/orders.json';
+import customersData from '../../data/customers.json';
 
-const Overview = () => {
+const Dashboard = () => {
     const { filters, dateRangeValue, previousDateRangeValue, comparisonLabel } = useFilters();
 
     // Calculate filtered orders once for all components
     const filteredOrders = useMemo(() => {
         return filterOrders(ordersData, filters, dateRangeValue);
-    }, [filters, dateRangeValue]);
+    }, [filters, dateRangeValue, ordersData]);
 
     const previousFilteredOrders = useMemo(() => {
         return filterOrders(ordersData, filters, previousDateRangeValue);
-    }, [filters, previousDateRangeValue]);
+    }, [filters, previousDateRangeValue, ordersData]);
 
     return (
         <div className="space-y-4">
+            <h1 className="hidden text-lg font-semibold text-gray-900 sm:block">
+                    Dashboard
+                </h1>
             <FilterBar />
 
             <OverviewKPIs
@@ -38,4 +42,4 @@ const Overview = () => {
     );
 };
 
-export default Overview;
+export default Dashboard;
