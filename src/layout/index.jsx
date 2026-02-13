@@ -8,7 +8,7 @@ const Layout = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     return (
-        <div className="flex bg-gray-50 text-gray-900 min-h-screen">
+        <div className="flex bg-gray-50 text-gray-900 h-screen overflow-hidden">
             {/* Sidebar */}
             <div className={`fixed inset-y-0 left-0 z-50 transform border-r border-gray-200 bg-white transition-all duration-300 ease-in-out lg:static ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
                 } ${isCollapsed ? 'w-20 lg:translate-x-0' : 'w-64 lg:translate-x-0'}`}>

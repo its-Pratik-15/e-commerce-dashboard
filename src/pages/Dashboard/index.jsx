@@ -3,6 +3,9 @@ import FilterBar from '../../filters/FilterBar';
 import OverviewKPIs from '../../kpi/OverviewKPIs';
 import RevenueTrendChart from '../../charts/RevenueTrendChart';
 import CategorySalesChart from '../../charts/CategorySalesChart';
+import RegionCustomerChart from '../../charts/RegionCustomerChart';
+import PaymentMethodChart from '../../charts/PaymentMethodChart';
+import OrderStatusChart from '../../charts/OrderStatusChartjsx';
 import { useFilters } from '../../context/FilterContext';
 import { filterOrders } from '../../utils/filterUtils';
 import ordersData from '../../data/orders.json';
@@ -34,9 +37,15 @@ const Dashboard = () => {
                 loading={false}
             />
 
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="w-full">
                 <RevenueTrendChart orders={filteredOrders} />
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <CategorySalesChart orders={filteredOrders} />
+                <RegionCustomerChart customers={customersData} />
+                <PaymentMethodChart orders={filteredOrders} />
+                <OrderStatusChart orders={filteredOrders} />
             </div>
         </div>
     );
