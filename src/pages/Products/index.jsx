@@ -4,11 +4,14 @@ import VirtualizedTable from '../../components/common/VirtualizedTable';
 import { useFilters } from '../../context/FilterContext';
 import { filterProducts } from '../../utils/filterUtils';
 import productsData from '../../data/products.json';
-import { Tag, Package, Banknote } from 'lucide-react';
+import DetailsDrawer from '../../components/common/DetailsDrawer';
+import ProductDetails from './components/ProductDetails';
+import { Tag, Package, Banknote, ShoppingBag } from 'lucide-react';
 
 const ProductsPage = () => {
     const { filters } = useFilters();
     const [sortConfig, setSortConfig] = useState({ key: 'price', direction: 'desc' });
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     // Filter and Sort Data
     const processedProducts = useMemo(() => {
@@ -83,7 +86,7 @@ const ProductsPage = () => {
     ], []);
 
     return (
-        <div className="space-y-6 h-full flex flex-col">
+        <div className="h-full flex flex-col p-4 sm:p-6 lg:p-8 space-y-6 overflow-hidden">
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">Products</h1>
@@ -95,7 +98,7 @@ const ProductsPage = () => {
                 </div>
             </div>
 
-            <FilterBar showRegion={false} showDate={false} showSearch={true}/>
+            <FilterBar showRegion={false} showDate={false} showSearch={true} />
 
             <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="h-[600px] w-full">
@@ -108,9 +111,18 @@ const ProductsPage = () => {
                         }))}
                         height="100%"
                         rowHeight={64}
+                        onRowClick={(row) => setSelectedProduct(row)}
                     />
                 </div>
             </div>
+
+            <DetailsDrawer
+                isOpen={!!selectedProduct}
+                onClose={() => setSelectedProduct(null)}
+                title="Product Details" 
+            >
+                {selectedProduct && <ProductDetails product={selectedProduct} />}
+            </DetailsDrawer>
         </div>
     );
 };

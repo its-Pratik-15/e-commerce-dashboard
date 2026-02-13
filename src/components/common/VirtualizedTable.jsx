@@ -19,7 +19,10 @@ const VirtualizedTable = ({
     });
 
     return (
-        <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden flex flex-col h-full">
+        <div
+            className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden flex flex-col"
+            style={{ height }}
+        >
             {/* Header */}
             <div className="bg-gray-50 border-b border-gray-200 grid pr-4" style={{ gridTemplateColumns: columns.map(col => col.width || '1fr').join(' ') }}>
                 {columns.map((column) => (
@@ -43,7 +46,7 @@ const VirtualizedTable = ({
             {/* Scrollable Body */}
             <div
                 ref={parentRef}
-                style={{ height: height, overflowY: 'auto', contain: 'strict' }}
+                style={{ overflowY: 'auto', contain: 'strict' }}
                 className="w-full flex-1"
             >
                 <div
@@ -75,11 +78,6 @@ const VirtualizedTable = ({
                         );
                     })}
                 </div>
-            </div>
-
-            {/* Footer Summary (Optional) */}
-            <div className="bg-white px-6 py-3 border-t border-gray-200 text-sm text-gray-500">
-                Showing {data.length} records
             </div>
         </div>
     );

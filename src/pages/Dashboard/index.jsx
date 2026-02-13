@@ -5,7 +5,7 @@ import RevenueTrendChart from '../../charts/RevenueTrendChart';
 import CategorySalesChart from '../../charts/CategorySalesChart';
 import RegionCustomerChart from '../../charts/RegionCustomerChart';
 import PaymentMethodChart from '../../charts/PaymentMethodChart';
-import OrderStatusChart from '../../charts/OrderStatusChartjsx';
+import OrderStatusChart from '../../charts/OrderStatusChart.jsx';
 import { useFilters } from '../../context/FilterContext';
 import { filterOrders } from '../../utils/filterUtils';
 import ordersData from '../../data/orders.json';
@@ -24,7 +24,7 @@ const Dashboard = () => {
     }, [filters, previousDateRangeValue, ordersData]);
 
     return (
-        <div className="space-y-4">
+        <div className="h-full overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6">
             <h1 className="hidden text-lg font-semibold text-gray-900 sm:block">
                 Dashboard
             </h1>

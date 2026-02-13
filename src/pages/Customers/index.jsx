@@ -4,12 +4,16 @@ import VirtualizedTable from '../../components/common/VirtualizedTable';
 import { useFilters } from '../../context/FilterContext';
 import { filterCustomers } from '../../utils/filterUtils';
 import customersData from '../../data/customers.json';
+import ordersData from '../../data/orders.json';
+import DetailsDrawer from '../../components/common/DetailsDrawer';
+import CustomerDetails from './components/CustomerDetails';
 import dayjs from 'dayjs';
-import { User, MapPin, Crown, Calendar } from 'lucide-react';
+import { User, MapPin, Crown, Calendar, Package } from 'lucide-react';
 
 const CustomersPage = () => {
     const { filters, dateRangeValue } = useFilters();
     const [sortConfig, setSortConfig] = useState({ key: 'signupDate', direction: 'desc' });
+    const [selectedCustomer, setSelectedCustomer] = useState(null);
 
     // Filter and Sort Data
     const processedCustomers = useMemo(() => {
@@ -97,7 +101,7 @@ const CustomersPage = () => {
     ], []);
 
     return (
-        <div className="space-y-6 h-full flex flex-col">
+        <div className="h-full flex flex-col p-4 sm:p-6 lg:p-8 space-y-6">
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">Customers</h1>
@@ -109,10 +113,10 @@ const CustomersPage = () => {
                 </div>
             </div>
 
-            <FilterBar showCategory={false} showCustomerType={true} showSearch={true}/>
+            <FilterBar showCategory={false} showCustomerType={true} showSearch={true} />
 
             <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="h-[600px] w-full">
+                <div className="h-full w-full">
                     <VirtualizedTable
                         data={processedCustomers}
                         columns={columns.map(col => ({
@@ -122,9 +126,18 @@ const CustomersPage = () => {
                         }))}
                         height="100%"
                         rowHeight={60}
+                        onRowClick={(row) => setSelectedCustomer(row)}
                     />
                 </div>
             </div>
+
+            <DetailsDrawer
+                isOpen={!!selectedCustomer}
+                onClose={() => setSelectedCustomer(null)}
+                title="Customer Details"
+            >
+                {selectedCustomer && <CustomerDetails customer={selectedCustomer} orders={ordersData} />}
+            </DetailsDrawer>
         </div>
     );
 };
