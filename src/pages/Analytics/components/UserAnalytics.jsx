@@ -6,6 +6,8 @@ import dayjs from 'dayjs';
 
 const RegionCustomerChart = React.lazy(() => import('../../../charts/RegionCustomerChart'));
 const CustomerGrowthChart = React.lazy(() => import('../../../charts/CustomerGrowthChart'));
+const TopCustomersChart = React.lazy(() => import('../../../charts/TopCustomersChart'));
+const CustomerTypeDistributionChart = React.lazy(() => import('../../../charts/CustomerTypeDistributionChart'));
 
 const UserAnalytics = ({ customers = [], orders = [], allCustomers = [] }) => {
     // Metrics
@@ -55,6 +57,15 @@ const UserAnalytics = ({ customers = [], orders = [], allCustomers = [] }) => {
                 </Suspense>
                 <Suspense fallback={<ChartSkeleton />}>
                     <CustomerGrowthChart customers={allCustomers} />
+                </Suspense>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                <Suspense fallback={<ChartSkeleton />}>
+                    <TopCustomersChart orders={orders} customers={customers} />
+                </Suspense>
+                <Suspense fallback={<ChartSkeleton />}>
+                    <CustomerTypeDistributionChart customers={customers} />
                 </Suspense>
             </div>
         </div>

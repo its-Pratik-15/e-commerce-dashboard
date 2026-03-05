@@ -1,71 +1,90 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
 import ChartWrapper from './components/ChartWrapper';
-import { groupDataByCategory } from '../utils/chartUtils';
 
 const OrderStatusChart = ({ orders = [] }) => {
     const chartOption = useMemo(() => {
-        const { labels, values } = groupDataByCategory(orders, 'orderStatus', null); // Use 'orderStatus', NOT 'status'.
-        let data = labels.map((label, index) => ({ value: values[index], name: label }));
+        // Count orders by status (only Completed, Refunded, Cancelled)
+        const statusCounts = {
+            'Completed': 0,
+            'Refunded': 0,
+            'Cancelled': 0
+        };
 
-        // Add Total Orders stage
-        data.push({ value: orders.length, name: 'Total Orders' });
+        orders.forEach(order => {
+            const status = order.orderStatus;
+            if (statusCounts.hasOwnProperty(status)) {
+                statusCounts[status]++;
+            }
+        });
 
-        // Sort data for Funnel (Highest first usually, or specific order)
-        data.sort((a, b) => b.value - a.value);
+        const data = Object.entries(statusCounts).map(([name, value]) => ({
+            name,
+            value
+        }));
+
+        const colors = {
+            'Completed': '#10b981',
+            'Refunded': '#f59e0b',
+            'Cancelled': '#ef4444'
+        };
 
         return {
             tooltip: {
                 trigger: 'item',
-                formatter: '{b}: {c}'
+                formatter: function (params) {
+                    const total = data.reduce((sum, item) => sum + item.value, 0);
+                    const percentage = ((params.value / total) * 100).toFixed(1);
+                    return `${params.name}<br/>Orders: <b>${params.value.toLocaleString()}</b> (${percentage}%)`;
+                }
             },
             legend: {
-                data: labels,
-                bottom: '0%',
-                left: 'center'
+                orient: 'vertical',
+                right: '10%',
+                top: 'center',
+                textStyle: {
+                    color: '#6b7280',
+                    fontSize: 12
+                }
             },
             series: [
                 {
                     name: 'Order Status',
-                    type: 'funnel',
-                    left: '10%',
-                    top: 60,
-                    bottom: 60,
-                    width: '80%',
-                    min: 0,
-                    max: data[0].value,
-                    minSize: '0%',
-                    maxSize: '100%',
-                    sort: 'descending',
-                    gap: 2,
-                    label: {
-                        show: true,
-                        position: 'left'
-                    },
-                    labelLine: {
-                        length: 10,
-                        lineStyle: {
-                            width: 1,
-                            type: 'solid'
-                        }
-                    },
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    center: ['35%', '50%'],
+                    avoidLabelOverlap: false,
                     itemStyle: {
+                        borderRadius: 8,
                         borderColor: '#fff',
-                        borderWidth: 1
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false
                     },
                     emphasis: {
                         label: {
-                            fontSize: 20
+                            show: true,
+                            fontSize: 14,
+                            fontWeight: 'bold'
                         }
                     },
-                    data: data
+                    labelLine: {
+                        show: false
+                    },
+                    data: data.map(item => ({
+                        ...item,
+                        itemStyle: {
+                            color: colors[item.name]
+                        }
+                    }))
                 }
             ]
         };
     }, [orders]);
 
     return (
-        <ChartWrapper title="Order Status" description="Order progression">
+        <ChartWrapper title="Order Status Distribution" description="Breakdown of completed, refunded, and cancelled orders">
             <ReactECharts option={chartOption} style={{ height: '100%', width: '100%' }} opts={{ renderer: 'svg' }} />
         </ChartWrapper>
     );

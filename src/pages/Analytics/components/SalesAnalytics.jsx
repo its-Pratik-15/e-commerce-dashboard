@@ -7,7 +7,6 @@ import { formatCurrency } from '../../../utils/kpiUtils';
 const CategorySalesChart = React.lazy(() => import('../../../charts/CategorySalesChart'));
 const SalesByPaymentChart = React.lazy(() => import('../../../charts/SalesByPaymentChart'));
 const SalesByRegionChart = React.lazy(() => import('../../../charts/SalesByRegionChart'));
-const SalesByCustomerTypeChart = React.lazy(() => import('../../../charts/SalesByCustomerTypeChart'));
 
 const SalesAnalytics = ({ orders = [], customers = [] }) => {
     // Basic Metrics
@@ -51,10 +50,6 @@ const SalesAnalytics = ({ orders = [], customers = [] }) => {
                     <SalesByRegionChart orders={orders} />
                 </Suspense>
             </div>
-
-            <Suspense fallback={<ChartSkeleton />}>
-                <SalesByCustomerTypeChart orders={orders} customers={customers} />
-            </Suspense>
         </div>
     );
 };

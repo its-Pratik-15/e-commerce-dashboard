@@ -36,7 +36,7 @@ const RevenueTrendChart = ({ orders = [] }) => {
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: labels.map(l => dayjs(l).format('MMM DD YYYY')), // Short format for axis
+                data: labels.map(l => dayjs(l).format('MMM DD YYYY')),
                 axisLine: { lineStyle: { color: '#e5e7eb' } },
                 axisLabel: { color: '#6b7280' }
             },

@@ -4,6 +4,8 @@ import { ChartSkeleton } from '../../../components/common/Skeletons';
 import KPICard from '../../../components/common/KPICard';
 
 const CategorySalesChart = React.lazy(() => import('../../../charts/CategorySalesChart'));
+const OrderStatusChart = React.lazy(() => import('../../../charts/OrderStatusChart'));
+const TopProductsChart = React.lazy(() => import('../../../charts/TopProductsChart'));
 
 const ProductAnalytics = ({ products = [], orders = [] }) => {
     // Metrics
@@ -12,26 +14,37 @@ const ProductAnalytics = ({ products = [], orders = [] }) => {
     const productsWithStock = useMemo(() => products.map(p => ({ ...p, stock: p.stock || Math.floor(Math.random() * 50) })), [products]);
     const lowStockCount = productsWithStock.filter(p => p.stock < 10).length;
 
-    // Top Selling Products based on Orders
+    // Top Selling Products based on Orders with product details
     const topProducts = useMemo(() => {
+        const productMap = {};
+        products.forEach(product => {
+            productMap[product.productId] = product;
+        });
+
         const productSales = {};
         orders.forEach(order => {
-            if (productSales[order.productId]) {
-                productSales[order.productId].count += 1;
-                productSales[order.productId].revenue += order.amount;
-            } else {
-                productSales[order.productId] = {
-                    count: 1,
-                    revenue: order.amount,
-                    name: order.productName || 'Unknown Product',
+            const productId = order.productId;
+            const product = productMap[productId];
+
+            if (!productSales[productId]) {
+                productSales[productId] = {
+                    productId,
+                    name: product?.name || 'Unknown Product',
+                    category: product?.category || 'Unknown',
+                    price: product?.price || 0,
+                    count: 0,
+                    revenue: 0,
                 };
             }
+            productSales[productId].count += 1;
+            productSales[productId].revenue += order.amount;
         });
 
         return Object.values(productSales)
-            .sort((a, b) => b.revenue - a.revenue)
-            .slice(0, 5);
-    }, [orders]);
+            .sort((a, b) => b.revenue - a.revenue);
+    }, [orders, products]);
+
+    const topPerformer = topProducts[0]?.name || 'N/A';
 
     return (
         <div className="space-y-6">
@@ -50,51 +63,27 @@ const ProductAnalytics = ({ products = [], orders = [] }) => {
                 />
                 <KPICard
                     title="Top Performer"
-                    value={topProducts[0]?.name || 'N/A'}
+                    value={topPerformer}
                     icon={TrendingUp}
                 />
             </div>
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                {/* Category Chart */}
-                <div className="bg-white rounded-lg shadow overflow-hidden">
-                    <div className="px-6 py-4 border-b border-gray-200">
-                        <h3 className="text-lg font-medium leading-6 text-gray-900">Sales by Product Category</h3>
-                    </div>
-                    <div className="p-6">
-                        <div className="h-[280px] w-full">
-                            <Suspense fallback={<ChartSkeleton />}>
-                                <CategorySalesChart orders={orders} />
-                            </Suspense>
-                        </div>
-                    </div>
-                </div>
+                {/* Order Status Chart */}
+                <Suspense fallback={<ChartSkeleton />}>
+                    <OrderStatusChart orders={orders} />
+                </Suspense>
 
-                {/* Top Products Table */}
-                <div className="bg-white rounded-lg shadow overflow-hidden">
-                    <div className="px-6 py-4 border-b border-gray-200">
-                        <h3 className="text-lg font-medium leading-6 text-gray-900">Top Selling Products</h3>
-                    </div>
-                    <div className="overflow-y-auto max-h-[350px]">
-                        <ul className="divide-y divide-gray-200">
-                            {topProducts.map((product, idx) => (
-                                <li key={idx} className="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
-                                    <div className="flex items-center">
-                                        <span className="text-gray-500 font-mono mr-4 w-6">{idx + 1}</span>
-                                        <div>
-                                            <p className="text-sm font-medium text-gray-900">{product.name}</p>
-                                            <p className="text-xs text-gray-500">{product.count} orders</p>
-                                        </div>
-                                    </div>
-                                    <div className="text-right">
-                                        <p className="text-sm font-semibold text-gray-900">₹{product.revenue.toLocaleString()}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+                {/* Top Products Chart */}
+                <Suspense fallback={<ChartSkeleton />}>
+                    <TopProductsChart orders={orders} products={products} />
+                </Suspense>
             </div>
+
+            {/* Category Sales Chart */}
+            <Suspense fallback={<ChartSkeleton />}>
+                <CategorySalesChart orders={orders} />
+            </Suspense>
         </div>
     );
 };
