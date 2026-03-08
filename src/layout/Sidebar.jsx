@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BarChart3, Settings, LogOut, ShoppingCart, Users, Package, ChevronLeft, ChevronRight } from 'lucide-react';
+import { LayoutDashboard, BarChart3, Settings, LogOut, ShoppingCart, Users, Package, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import clsx from 'clsx';
 
 const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
@@ -25,15 +25,35 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             )}
         >
             <div className={clsx("flex h-16 items-center border-b border-gray-200 px-4 transition-all", isCollapsed ? "justify-center" : "justify-between")}>
-                {!isCollapsed && <span className="text-xl font-bold text-indigo-600">Dashboard</span>}
+                {!isCollapsed ? (
+                    <div className="flex items-center gap-2">
+                        <div className="relative">
+                            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg">
+                                <Zap className="h-5 w-5 text-white" fill="white" />
+                            </div>
+                            <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 border-2 border-white"></div>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                E-Dash
+                            </span>
+                            <span className="text-[10px] text-gray-400 -mt-1">Analytics Pro</span>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="relative">
+                        <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg">
+                            <Zap className="h-5 w-5 text-white" fill="white" />
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 border-2 border-white"></div>
+                    </div>
+                )}
                 <button
                     onClick={() => setIsCollapsed(!isCollapsed)}
                     className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hidden lg:block"
                 >
                     {isCollapsed ? <ChevronRight className="h-5 w-5" /> : <ChevronLeft className="h-5 w-5" />}
                 </button>
-                {/* Mobile placeholder or logo if needed */}
-                {isCollapsed && <span className="text-xl font-bold text-indigo-600 lg:hidden">DB</span>}
             </div>
 
             <div className="flex flex-col h-[calc(100vh-4rem)] justify-between px-3 py-4">

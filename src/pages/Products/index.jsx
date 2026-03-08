@@ -1,12 +1,15 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, Suspense, lazy } from 'react';
 import FilterBar from '../../filters/FilterBar';
-import VirtualizedTable from '../../components/common/VirtualizedTable';
+import { TableSkeleton } from '../../components/common/Skeletons';
 import { useFilters } from '../../context/FilterContext';
 import { filterProducts } from '../../utils/filterUtils';
 import productsData from '../../data/products.json';
-import DetailsDrawer from '../../components/common/DetailsDrawer';
-import ProductDetails from './components/ProductDetails';
-import { Tag, Package, Banknote, ShoppingBag } from 'lucide-react';
+import { Tag, Package, Banknote } from 'lucide-react';
+
+// Lazy load components
+const VirtualizedTable = lazy(() => import('../../components/common/VirtualizedTable'));
+const DetailsDrawer = lazy(() => import('../../components/common/DetailsDrawer'));
+const ProductDetails = lazy(() => import('./components/ProductDetails'));
 
 const ProductsPage = () => {
     const { filters } = useFilters();
@@ -100,29 +103,33 @@ const ProductsPage = () => {
 
             <FilterBar showRegion={false} showDate={false} showSearch={true} />
 
-            <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="h-[600px] w-full">
-                    <VirtualizedTable
-                        data={processedProducts}
-                        columns={columns.map(col => ({
-                            ...col,
-                            sortDirection: sortConfig.key === col.key ? sortConfig.direction : null,
-                            onSort: handleSort
-                        }))}
-                        height="100%"
-                        rowHeight={64}
-                        onRowClick={(row) => setSelectedProduct(row)}
-                    />
+            <Suspense fallback={<TableSkeleton />}>
+                <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div className="h-[600px] w-full">
+                        <VirtualizedTable
+                            data={processedProducts}
+                            columns={columns.map(col => ({
+                                ...col,
+                                sortDirection: sortConfig.key === col.key ? sortConfig.direction : null,
+                                onSort: handleSort
+                            }))}
+                            height="100%"
+                            rowHeight={64}
+                            onRowClick={(row) => setSelectedProduct(row)}
+                        />
+                    </div>
                 </div>
-            </div>
+            </Suspense>
 
-            <DetailsDrawer
-                isOpen={!!selectedProduct}
-                onClose={() => setSelectedProduct(null)}
-                title="Product Details" 
-            >
-                {selectedProduct && <ProductDetails product={selectedProduct} />}
-            </DetailsDrawer>
+            <Suspense fallback={null}>
+                <DetailsDrawer
+                    isOpen={!!selectedProduct}
+                    onClose={() => setSelectedProduct(null)}
+                    title="Product Details"
+                >
+                    {selectedProduct && <ProductDetails product={selectedProduct} />}
+                </DetailsDrawer>
+            </Suspense>
         </div>
     );
 };

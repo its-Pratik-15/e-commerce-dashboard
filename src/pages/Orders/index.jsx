@@ -1,15 +1,17 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, Suspense, lazy } from 'react';
 import FilterBar from '../../filters/FilterBar';
-import VirtualizedTable from '../../components/common/VirtualizedTable';
+import { TableSkeleton } from '../../components/common/Skeletons';
 import { useFilters } from '../../context/FilterContext';
 import { filterOrders } from '../../utils/filterUtils';
 import ordersData from '../../data/orders.json';
 import customersData from '../../data/customers.json';
-
 import productsData from '../../data/products.json';
-import DetailsDrawer from '../../components/common/DetailsDrawer';
-import OrderDetails from './components/OrderDetails';
 import dayjs from 'dayjs';
+
+// Lazy load components
+const VirtualizedTable = lazy(() => import('../../components/common/VirtualizedTable'));
+const DetailsDrawer = lazy(() => import('../../components/common/DetailsDrawer'));
+const OrderDetails = lazy(() => import('./components/OrderDetails'));
 
 const OrdersPage = () => {
     const { filters, dateRangeValue } = useFilters();
@@ -124,34 +126,35 @@ const OrdersPage = () => {
 
             <FilterBar showCategory={false} showStatus={true} showSearch={true} />
 
-            <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                {/* Custom wrapper for VirtualizedTable to fit remaining height */}
-                <div className="h-[600px] w-full">
-                    {/* The VirtualizedTable component needs further refinement for dynamic height/width 
-                        but let's start with fixed height for simplicity or pass style */}
-                    <VirtualizedTable
-                        data={processedOrders}
-                        columns={columns.map(col => ({
-                            ...col,
-                            sortDirection: sortConfig.key === col.key ? sortConfig.direction : null,
-                            onSort: handleSort
-                        }))}
-                        height="100%"
-                        rowHeight={50}
-                        onRowClick={(row) => setSelectedOrder(row)}
-                    />
+            <Suspense fallback={<TableSkeleton />}>
+                <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div className="h-[600px] w-full">
+                        <VirtualizedTable
+                            data={processedOrders}
+                            columns={columns.map(col => ({
+                                ...col,
+                                sortDirection: sortConfig.key === col.key ? sortConfig.direction : null,
+                                onSort: handleSort
+                            }))}
+                            height="100%"
+                            rowHeight={50}
+                            onRowClick={(row) => setSelectedOrder(row)}
+                        />
+                    </div>
                 </div>
-            </div>
+            </Suspense>
 
-            <DetailsDrawer
-                isOpen={!!selectedOrder}
-                onClose={() => setSelectedOrder(null)}
-                title="Order Details"
-            >
-                {selectedOrder && (
-                    <OrderDetails order={selectedOrder} />
-                )}
-            </DetailsDrawer>
+            <Suspense fallback={null}>
+                <DetailsDrawer
+                    isOpen={!!selectedOrder}
+                    onClose={() => setSelectedOrder(null)}
+                    title="Order Details"
+                >
+                    {selectedOrder && (
+                        <OrderDetails order={selectedOrder} />
+                    )}
+                </DetailsDrawer>
+            </Suspense>
         </div>
     );
 };

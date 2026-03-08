@@ -1,15 +1,18 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, Suspense, lazy } from 'react';
 import FilterBar from '../../filters/FilterBar';
-import DashboardKPIs from './components/DashboardKPIs';
-import RevenueTrendChart from '../../charts/RevenueTrendChart';
-import CategorySalesChart from '../../charts/CategorySalesChart';
-import RegionCustomerChart from '../../charts/RegionCustomerChart';
-import PaymentMethodChart from '../../charts/PaymentMethodChart';
-import OrderStatusChart from '../../charts/OrderStatusChart.jsx';
+import { ChartSkeleton, KPISkeleton } from '../../components/common/Skeletons';
 import { useFilters } from '../../context/FilterContext';
 import { filterOrders } from '../../utils/filterUtils';
 import ordersData from '../../data/orders.json';
 import customersData from '../../data/customers.json';
+
+// Lazy load components
+const DashboardKPIs = lazy(() => import('./components/DashboardKPIs'));
+const RevenueTrendChart = lazy(() => import('../../charts/RevenueTrendChart'));
+const CategorySalesChart = lazy(() => import('../../charts/CategorySalesChart'));
+const RegionCustomerChart = lazy(() => import('../../charts/RegionCustomerChart'));
+const PaymentMethodChart = lazy(() => import('../../charts/PaymentMethodChart'));
+const OrderStatusChart = lazy(() => import('../../charts/OrderStatusChart'));
 
 const Dashboard = () => {
     const { filters, dateRangeValue, previousDateRangeValue, comparisonLabel } = useFilters();
@@ -33,22 +36,34 @@ const Dashboard = () => {
             </div>
             <FilterBar />
 
-            <DashboardKPIs
-                orders={filteredOrders}
-                previousOrders={previousFilteredOrders}
-                comparisonLabel={comparisonLabel}
-                loading={false}
-            />
+            <Suspense fallback={<KPISkeleton />}>
+                <DashboardKPIs
+                    orders={filteredOrders}
+                    previousOrders={previousFilteredOrders}
+                    comparisonLabel={comparisonLabel}
+                    loading={false}
+                />
+            </Suspense>
 
-            <div className="w-full">
-                <RevenueTrendChart orders={filteredOrders} />
-            </div>
+            <Suspense fallback={<ChartSkeleton />}>
+                <div className="w-full">
+                    <RevenueTrendChart orders={filteredOrders} />
+                </div>
+            </Suspense>
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                <CategorySalesChart orders={filteredOrders} />
-                <RegionCustomerChart customers={customersData} />
-                <PaymentMethodChart orders={filteredOrders} />
-                <OrderStatusChart orders={filteredOrders} />
+                <Suspense fallback={<ChartSkeleton />}>
+                    <CategorySalesChart orders={filteredOrders} />
+                </Suspense>
+                <Suspense fallback={<ChartSkeleton />}>
+                    <RegionCustomerChart customers={customersData} />
+                </Suspense>
+                <Suspense fallback={<ChartSkeleton />}>
+                    <PaymentMethodChart orders={filteredOrders} />
+                </Suspense>
+                <Suspense fallback={<ChartSkeleton />}>
+                    <OrderStatusChart orders={filteredOrders} />
+                </Suspense>
             </div>
         </div>
     );

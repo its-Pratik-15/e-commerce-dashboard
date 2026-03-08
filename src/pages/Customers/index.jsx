@@ -1,14 +1,17 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, Suspense, lazy } from 'react';
 import FilterBar from '../../filters/FilterBar';
-import VirtualizedTable from '../../components/common/VirtualizedTable';
+import { TableSkeleton } from '../../components/common/Skeletons';
 import { useFilters } from '../../context/FilterContext';
 import { filterCustomers } from '../../utils/filterUtils';
 import customersData from '../../data/customers.json';
 import ordersData from '../../data/orders.json';
-import DetailsDrawer from '../../components/common/DetailsDrawer';
-import CustomerDetails from './components/CustomerDetails';
 import dayjs from 'dayjs';
-import { User, MapPin, Crown, Calendar, Package } from 'lucide-react';
+import { MapPin, Crown, Calendar } from 'lucide-react';
+
+// Lazy load components
+const VirtualizedTable = lazy(() => import('../../components/common/VirtualizedTable'));
+const DetailsDrawer = lazy(() => import('../../components/common/DetailsDrawer'));
+const CustomerDetails = lazy(() => import('./components/CustomerDetails'));
 
 const CustomersPage = () => {
     const { filters, dateRangeValue } = useFilters();
@@ -115,29 +118,33 @@ const CustomersPage = () => {
 
             <FilterBar showCategory={false} showCustomerType={true} showSearch={true} />
 
-            <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="h-full w-full">
-                    <VirtualizedTable
-                        data={processedCustomers}
-                        columns={columns.map(col => ({
-                            ...col,
-                            sortDirection: sortConfig.key === col.key ? sortConfig.direction : null,
-                            onSort: handleSort
-                        }))}
-                        height="100%"
-                        rowHeight={60}
-                        onRowClick={(row) => setSelectedCustomer(row)}
-                    />
+            <Suspense fallback={<TableSkeleton />}>
+                <div className="flex-1 min-h-0 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div className="h-full w-full">
+                        <VirtualizedTable
+                            data={processedCustomers}
+                            columns={columns.map(col => ({
+                                ...col,
+                                sortDirection: sortConfig.key === col.key ? sortConfig.direction : null,
+                                onSort: handleSort
+                            }))}
+                            height="100%"
+                            rowHeight={60}
+                            onRowClick={(row) => setSelectedCustomer(row)}
+                        />
+                    </div>
                 </div>
-            </div>
+            </Suspense>
 
-            <DetailsDrawer
-                isOpen={!!selectedCustomer}
-                onClose={() => setSelectedCustomer(null)}
-                title="Customer Details"
-            >
-                {selectedCustomer && <CustomerDetails customer={selectedCustomer} orders={ordersData} />}
-            </DetailsDrawer>
+            <Suspense fallback={null}>
+                <DetailsDrawer
+                    isOpen={!!selectedCustomer}
+                    onClose={() => setSelectedCustomer(null)}
+                    title="Customer Details"
+                >
+                    {selectedCustomer && <CustomerDetails customer={selectedCustomer} orders={ordersData} />}
+                </DetailsDrawer>
+            </Suspense>
         </div>
     );
 };

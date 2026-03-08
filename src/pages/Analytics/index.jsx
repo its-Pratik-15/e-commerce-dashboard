@@ -51,11 +51,9 @@ const Analytics = () => {
         <div className="h-full flex flex-col overflow-hidden bg-gray-50">
             {/* Header Section */}
             <div className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Analytics Dashboard</h1>
-                        <p className="text-sm text-gray-500 mt-1">Comprehensive business metrics and insights</p>
-                    </div>
+                <div>
+                    <h1 className="text-2xl font-bold text-gray-900">Customers</h1>
+                    <p className="text-sm text-gray-500 mt-1">Manage and view your customer base</p>
                 </div>
 
                 {/* Navigation Tabs and Filters Row */}
