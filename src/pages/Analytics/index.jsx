@@ -7,9 +7,10 @@ import { ChartSkeleton } from '../../components/common/Skeletons';
 const UserAnalytics = React.lazy(() => import('./components/UserAnalytics'));
 const SalesAnalytics = React.lazy(() => import('./components/SalesAnalytics'));
 const ProductAnalytics = React.lazy(() => import('./components/ProductAnalytics'));
+const AnalyticsDashboard = React.lazy(() => import('./components/AnalyticsDashboard'));
 
 const Analytics = () => {
-    const [activeTab, setActiveTab] = useState('customers');
+    const [activeTab, setActiveTab] = useState('dashboard');
     const analyticsData = useAnalyticsData();
 
     const renderContent = () => {
@@ -42,6 +43,12 @@ const Analytics = () => {
                         />
                     </Suspense>
                 );
+            case 'dashboard':
+                return (
+                    <Suspense fallback={<ChartSkeleton />}>
+                        <AnalyticsDashboard />
+                    </Suspense>
+                );
             default:
                 return null;
         }
@@ -52,18 +59,22 @@ const Analytics = () => {
             {/* Header Section */}
             <div className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-6">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Customers</h1>
-                    <p className="text-sm text-gray-500 mt-1">Manage and view your customer base</p>
+                    <h1 className="text-2xl font-bold text-gray-900">Analytics</h1>
+                    <p className="text-sm text-gray-500 mt-1">Comprehensive business insights and data analysis</p>
                 </div>
 
-                {/* Navigation Tabs and Filters Row */}
-                <div className="mt-2 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                {/* Navigation Tabs */}
+                <div className="mt-2">
                     <AnalyticsNav activeTab={activeTab} onTabChange={setActiveTab} />
-                    <div className="flex-shrink-0 pt-4">
-                        <FilterBar />
-                    </div>
                 </div>
             </div>
+
+            {/* Filters Row - Only for Customer, Sales, Product Analysis */}
+            {activeTab !== 'dashboard' && (
+                <div className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-4">
+                    <FilterBar />
+                </div>
+            )}
 
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6">

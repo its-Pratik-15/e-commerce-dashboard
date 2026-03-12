@@ -1,8 +1,9 @@
 import React from 'react';
-import { Users, ShoppingCart, Package } from 'lucide-react';
+import { Users, ShoppingCart, Package, BarChart3 } from 'lucide-react';
 
 const AnalyticsNav = ({ activeTab, onTabChange }) => {
     const tabs = [
+        { id: 'dashboard', label: 'Analytics Dashboard', icon: BarChart3 },
         { id: 'customers', label: 'Customer Analysis', icon: Users },
         { id: 'orders', label: 'Sales Analysis', icon: ShoppingCart },
         { id: 'products', label: 'Product Analysis', icon: Package },
